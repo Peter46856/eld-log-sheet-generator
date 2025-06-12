@@ -1,5 +1,11 @@
 # React + Vite
 
+GitHub: https://github.com/Peter46856/eld-log-sheet-generator
+
+Loom Link for the app:https://www.loom.com/share/6f6f86d3bab9490282f0dcc59f6d12f6?t=367&sid=735ac9e2-9d07-4084-aab9-dbbc3ae604f9
+
+Loom Link for the code:https://www.loom.com/share/e60776d3712c44d8a95c7318a9526a9a?sid=9f627a7a-d05d-4c2d-82dd-7e0f39621d64
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

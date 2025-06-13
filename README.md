@@ -6,6 +6,9 @@ Loom Link for the app:https://www.loom.com/share/6f6f86d3bab9490282f0dcc59f6d12f
 
 Loom Link for the code:https://www.loom.com/share/e60776d3712c44d8a95c7318a9526a9a?sid=9f627a7a-d05d-4c2d-82dd-7e0f39621d64
 
+Vercel Link1: "https://eld-log-sheet-generator-git-main-peter-juma-mutisos-projects.vercel.app/"
+Vercel Link2:"https://eld-log-sheet-generator-nhv8x3zpy-peter-juma-mutisos-projects.vercel.app/"
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

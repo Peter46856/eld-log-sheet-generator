@@ -21,6 +21,15 @@ function TripForm({ onTripCreatedAndCalculated }) {
   const [isLoading, setIsLoading] = useState(false); // State for loading indicator
   const [buttonHovered, setButtonHovered] = useState(false); // State for button hover effect
 
+  const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
+  // Fallback for local development if the variable isn't set (though .env.development should handle this)
+  const FALLBACK_LOCAL_API_URL = 'http://127.0.0.1:8000/api/';
+
+  const backendApiUrl = API_BASE_URL || FALLBACK_LOCAL_API_URL;
+
+
+
+
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission behavior
     setMessage('Calculating trip...');
@@ -37,7 +46,7 @@ function TripForm({ onTripCreatedAndCalculated }) {
     try {
       // Step 1: Create the trip by sending data to the backend API
       const createTripResponse = await axios.post(
-        'http://127.0.0.1:8000/api/trips/', // Ensure this URL matches your backend
+        `${backendApiUrl}trips/`, // Ensure this URL matches your backend
         tripData
       );
 
@@ -49,7 +58,7 @@ function TripForm({ onTripCreatedAndCalculated }) {
 
       // Step 2: Calculate route and ELD logs using the obtained tripId
       const calculateLogsResponse = await axios.post(
-        `http://127.0.0.1:8000/api/trips/${tripId}/calculate_route_and_logs/` // Ensure this URL matches your backend
+        `${backendApiUrl}trips/${tripId}/calculate_route_and_logs/` // Ensure this URL matches your backend
       );
 
       console.log('Route and ELD logs calculated:', calculateLogsResponse.data);

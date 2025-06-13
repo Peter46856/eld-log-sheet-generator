@@ -9,6 +9,13 @@ function LogSheetDisplay({ tripId }) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
+ 
+     const FALLBACK_LOCAL_API_URL = 'http://127.0.0.1:8000/api/';
+
+    const backendApiUrl = API_BASE_URL || FALLBACK_LOCAL_API_URL;
+
+
     // useCallback to memoize calculateDailySummaries to prevent unnecessary re-renders
     const calculateDailySummaries = useCallback((logs) => {
         let totalDriving = 0;
@@ -639,7 +646,7 @@ function LogSheetDisplay({ tripId }) {
             setError(null); // Clear previous errors
             try {
                 // Ensure this URL is correct for your backend API
-                const response = await fetch(`http://localhost:8000/api/trips/${tripId}/logs/`);
+                const response = await fetch(`${backendApiUrl}trips/${tripId}/logs/`);
                 if (!response.ok) {
                     if (response.status === 404) {
                         throw new Error(`Logs not found for Trip ID: ${tripId}.`);

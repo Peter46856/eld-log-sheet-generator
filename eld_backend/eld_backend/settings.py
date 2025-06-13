@@ -52,10 +52,11 @@ INSTALLED_APPS = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173", # React's default development server
+    "http://localhost:5173", 
     "http://127.0.0.1:5173",
-    # Add your Vercel URL here when you deploy your frontend:
-    # "https://your-vercel-app-name.vercel.app",
+    "https://eld-log-sheet-generator-git-main-peter-juma-mutisos-projects.vercel.app/"
+    "https://eld-log-sheet-generator-nhv8x3zpy-peter-juma-mutisos-projects.vercel.app/"
+    
 ]
 
 

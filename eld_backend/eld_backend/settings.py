@@ -216,6 +216,7 @@ INSTALLED_APPS = [
 # CORS_ALLOWED_ORIGINS should be a list of *exact* origins that are allowed.
 # Make sure these URLs do NOT end with a trailing slash if they are not directories.
 # The Vercel preview/main deployment URLs should be included here.
+CORS_ALLOWED_ORIGINS_STR = os.environ.get('CORS_ALLOWED_ORIGINS', '')
 CORS_ALLOWED_ORIGINS = [
     origin.strip() for origin in CORS_ALLOWED_ORIGINS_STR.split(',') if origin.strip()
 ]
